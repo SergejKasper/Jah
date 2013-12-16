@@ -1,0 +1,17 @@
+<div jqm-page>
+    <!-- Header -->
+    <div jqm-header>
+    <div icon="ui-icon-flat-man" jqm-theme="b" class = "ui-btn-left" jqm-button ng-click="$root.panel='left'">left</div>
+      <h1>'Allo, 'Allo!!</h1>
+    </div>
+    <!-- Recepie List-->
+    <div class="" style="top:138px; width: 80%; margin: auto;">
+            
+            <ul jqm-listview inset="true">
+                <li jqm-li-divider jqm-theme="b">Provided Awesomes</li>
+                <li ng-repeat="awesomeThing in awesomeThings" jqm-li-link="#/{{awesomeThing}}" >
+                        {{awesomeThing}}
+                </li>
+            </ul>
+    </div>
+</div>

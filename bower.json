@@ -1,0 +1,20 @@
+{
+  "name": "new-client",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.2.0",
+    "json3": "~3.2.4",
+    "es5-shim": "~2.1.0",
+    "angular-resource": "1.2.0",
+    "angular-cookies": "1.2.0",
+    "angular-sanitize": "1.2.0",
+    "angular-touch": "1.2.0",
+    "angular-route": "1.2.0",
+    "angular-animate": "1.2.0",
+    "angular-jqm": "https://github.com/angular-widgets/angular-jqm/tree/angular-1.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.0",
+    "angular-scenario": "1.2.0"
+  }
+}
