@@ -1,5 +1,5 @@
 # Jah
-Jquery Angular Hybrid: A god mode hybrid-app kickstarter using Angular-Generator[Yeoman Generator for AngularJS](https://github.com/yeoman/generator-angular) and [Angular-JQM](https://github.com/angular-widgets/angular-jqm) with [PhoneGap/Cordova](http://phonegap.com)
+Jquery Angular Hybrid: A god mode hybrid-app kickstarter using the [Yeoman Generator for AngularJS](https://github.com/yeoman/generator-angular) with Angular's own jQuery-Mobile-UI ([Angular-JQM](https://github.com/angular-widgets/angular-jqm)) and automaticly deploying it as a hybrid app with [PhoneGap/Cordova](http://phonegap.com)
 
 ## Requirements
 You will need the tools bower, grunt, cordova angular-generator to get going. Install them with [node](http://nodejs.org)'s package manager npm.
@@ -15,11 +15,9 @@ You will need the tools bower, grunt, cordova angular-generator to get going. In
     npm install
     bower install
 ## Run
-`grunt build` for building.
-
-
+`grunt build` for building the app.
 `grunt deploy` for deploying the app to Phonegap (dist/mobile/www).
-`grunt deploy android` or `grunt deploy ios` for deploying and running the app on a device.
+`grunt deploy:android` or `grunt deploy:ios` for deploying and running the app on a device.
 `grunt serve` for previewing the app code in your browser
 I'd recomend [Ripple](http://ripple.incubator.apache.org/) for in-browser debuging.
 
