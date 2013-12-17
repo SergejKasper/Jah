@@ -46,7 +46,13 @@
     <!-- Add your site or application content here -->
     <div jqm-panel-container="$root.panel" ng-init="$root.display = 'reveal'">
             <div jqm-panel display="{{$root.display}}">
-                <h1>Profile</h1>
+                <h1>Yours truly</h1>
+                <ul jqm-listview inset="true">
+                    <li jqm-li-divider jqm-theme="f">Awesomenes</li>
+                    <li ng-repeat="awesomeThing in awesomeThings" jqm-li-link="#/{{awesomeThing.name}}" >
+                            {{awesomeThing.name}}
+                    </li>
+                </ul>
             </div>
             <div jqm-caching-view>
                 <div jqm-footer>
@@ -72,6 +78,8 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/angular-jqm.min.js"></script>
         <script src="scripts/controllers/thing.js"></script>
+        <script src="scripts/services/cordovaReady.js"></script>
+        <script src="scripts/services/cordovaGreater.js"></script>
         <!-- endbuild -->
 </body>
 </html>
