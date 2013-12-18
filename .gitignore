@@ -1,6 +1,6 @@
 node_modules
-dist/mobile/*
-dist/desctop/*
+dist/mobile/**
+dist/desctop/**
 .tmp
 .sass-cache
 app/bower_components
