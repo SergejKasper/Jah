@@ -1,10 +1,12 @@
 'use strict';
 
-angular.module('newClientApp', ['jqm',
+angular.module('App', ['jqm',
   'ngRoute',
   'ngCookies',
   'ngResource',
-  'ngSanitize'
+  'ngSanitize',
+  'cordova',
+  'ui'
 ])
   .config(function ($routeProvider) {
     $routeProvider

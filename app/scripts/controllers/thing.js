@@ -1,9 +1,6 @@
 'use strict';
 
-angular.module('newClientApp')
-	.controller('ThingCtrl', function($scope, $routeParams) {
+angular.module('App')
+	.controller('ThingCtrl',['$scope', '$routeParams', function($scope, $routeParams) {
 		$scope.awesomeThing = $routeParams.name;
-		$scope.act = function act() {
-			alert('Your Call to act!');
-		};
-	});
+	}]);

@@ -10,10 +10,7 @@
                 <li jqm-li-divider jqm-theme="a"><center>Hybrid</center></li>
                 <li jqm-li-entry style="padding-bottom: 0px;">
                     <div class="cordova-container">
-                        <div id="deviceready" class="blink">
-                            <p class="event listening">Connecting to Device</p>
-                            <p class="event received">Device is Ready</p>
-                        </div>
+                        <div ui-service-availible is-availible="cordovaReady"></div>
                     </div>
                 </li>
                 <li jqm-li-divider jqm-theme="a">
@@ -22,7 +19,7 @@
             </ul>
             <ul jqm-listview class="ui-listview" inset="true">
                 <li jqm-li-entry style="padding: 30px;" jqm-theme="b">
-                    <center><p>Thanks for starting!</p> <p>I'm a seed project combining Angular, jQueryMobile and PhoneGap with Angular-JQM.</p></center>
+                    <center><p>Thanks for starting!</p> <p>{{welcome}}</p></center>
                 </li>
             </ul>              
     </div>

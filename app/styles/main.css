@@ -12,7 +12,7 @@
     /* offset horizontal: half of text area width */
 }
 
-#deviceready {
+.deviceready {
     margin-bottom: 30px;
 }
 

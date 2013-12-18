@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('newClientApp')
-  .controller('MainCtrl', function ($scope, cordovaGreater) {
-    cordovaGreater.sayReady();
-  });
+angular.module('App')
+	.controller('MainCtrl', ['$scope',
+		function($scope){
+			$scope.welcome = 'I\'m a seed project combining Angular, jQueryMobile and PhoneGap with Angular-JQM.';
+		}
+	]);
