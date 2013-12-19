@@ -32,15 +32,15 @@ module.exports = function(grunt) {
     },
     watch: {
       coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
+        files: ['<%= yeoman.app %>/scripts/**/*.coffee'],
         tasks: ['coffee:dist']
       },
       coffeeTest: {
-        files: ['test/spec/{,*/}*.coffee'],
+        files: ['test/spec/**/*.coffee'],
         tasks: ['coffee:test']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+        files: ['<%= yeoman.app %>/assets/**/*.css'],
         tasks: ['copy:styles', 'autoprefixer']
       },
       livereload: {
@@ -48,10 +48,9 @@ module.exports = function(grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/**/*.html',
+          '.tmp/assets/**/*.css',
+          '{.tmp,<%= yeoman.app %>}/scripts/**/*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -61,9 +60,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
-          dest: '.tmp/styles/'
+          cwd: '.tmp/assets/',
+          src: '**/*.css',
+          dest: '.tmp/assets/'
         }]
       }
     },
@@ -125,7 +124,7 @@ module.exports = function(grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
+        '<%= yeoman.app %>/scripts/**/*.js'
       ]
     },
     coffee: {
@@ -137,7 +136,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/scripts',
-          src: '{,*/}*.coffee',
+          src: '**/*.coffee',
           dest: '.tmp/scripts',
           ext: '.js'
         }]
@@ -146,7 +145,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'test/spec',
-          src: '{,*/}*.coffee',
+          src: '**/*.coffee',
           dest: '.tmp/spec',
           ext: '.js'
         }]
@@ -161,10 +160,10 @@ module.exports = function(grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/scripts/{,*/}*.js',
-            '<%= yeoman.dist %>/styles/{,*/}*.css',
-            //'<%= yeoman.dist %>/styles/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            //'<%= yeoman.dist %>/styles/fonts/*'
+            '<%= yeoman.dist %>/scripts/**/*.js',
+            '<%= yeoman.dist %>/assets/**/*.css',
+            //'<%= yeoman.dist %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            //'<%= yeoman.dist %>/assets/fonts/*'
           ]
         }
       }
@@ -176,8 +175,8 @@ module.exports = function(grunt) {
       }
     },
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      html: ['<%= yeoman.dist %>/**/*.html'],
+      css: ['<%= yeoman.dist %>/assets/**/*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>']
       }
@@ -186,9 +185,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist %>/images'
+          cwd: '<%= yeoman.app %>/assets',
+          src: '{external/, components/, app/}images/**/*.{png,jpg,jpeg}',
+          dest: '<%= yeoman.dist %>/assets'
         }]
       }
     },
@@ -196,9 +195,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
+          cwd: '<%= yeoman.app %>/assets',
+          src: '{external/, components/, app/}images/**/*.svg',
+          dest: '<%= yeoman.dist %>/assets'
         }]
       }
     },
@@ -208,9 +207,9 @@ module.exports = function(grunt) {
       // Usemin blocks.
       // dist: {
       //   files: {
-      //     '<%= yeoman.dist %>/styles/main.css': [
-      //       '.tmp/styles/{,*/}*.css',
-      //       '<%= yeoman.app %>/styles/{,*/}*.css'
+      //     '<%= yeoman.dist %>/assets/main.css': [
+      //       '.tmp/assets/{,*/}*.css',
+      //       '<%= yeoman.app %>/assets/{,*/}*.css'
       //     ]
       //   }
       // }
@@ -247,24 +246,23 @@ module.exports = function(grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'bower_components/**/*',
-            'styles/images/{,*/}*.{gif,webp,png}',
-            'styles/fonts/*'
+            'bower_components/**/*'
           ]
-        }, {
+        },{
           expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
+          cwd: '<%= yeoman.app %>/assets/',
+          dest: '<%= yeoman.dist %>/assets',
           src: [
-            'generated/*'
+            '*/images/**/*.{gif,webp,png}',
+            '*/fonts/*'
           ]
         }]
       },
       styles: {
         expand: true,
-        cwd: '<%= yeoman.app %>/styles',
-        dest: '.tmp/styles/',
-        src: '{,*/}*.css'
+        cwd: '<%= yeoman.app %>/assets',
+        dest: '.tmp/assets/',
+        src: '**/*.css'
       },
       //Added Phonegap copy to dir function to port dist to app. 
       //The phonegap.js should be generated by the build.

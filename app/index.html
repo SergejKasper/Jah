@@ -13,24 +13,30 @@
     user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- build:css(.tmp) styles/main.css -->
-        <link type="text/css" rel="stylesheet" href="styles/jquery.mobile.flatui.css">
-        <link type="text/css" rel="stylesheet" href="styles/angular-jqm.css">
-        <link rel="stylesheet" href="styles/main.css">
+        <!-- build:css(.tmp) assets/external/external.css -->
+        <link type="text/css" rel="stylesheet" href="assets/external/jqmFlatUi.css">
+        <link type="text/css" rel="stylesheet" href="assets/external/angularJqm.css">
+        <!-- endbuild -->
+        <!-- build:css(.tmp) assets/app/components.css -->
+        <link type="text/css" rel="stylesheet" href="assets/components/cordovaUi.css">
+        <!-- endbuild -->
+        <!-- build:css(.tmp) assets/app/app.css -->
+        <link type="text/css" rel="stylesheet" href="assets/app/main.css">
         <!-- endbuild -->
         <script src="cordova.js"></script>
         <script src="bower_components/angular/angular.js"></script>
-        <!-- build:js scripts/modules.js -->
+        <!-- build:js assets/external/external.js -->
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/angular-touch/angular-touch.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="scripts/external/modules/angular-jqm.min.js"></script>
         <!-- endbuild -->
 
 </head>
-  <body ng-app="App">
+  <body ng-app="app">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -58,26 +64,17 @@
             </div>
     </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script> -->
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/angular-jqm.min.js"></script>
-    <script src="scripts/controllers/thing.js"></script>
-    <script src="scripts/modules/Cordova.js"></script>
-    <script src="scripts/modules/Ui.js"></script>
-    <script src="scripts/services/cordova/Ready.js"></script>
-    <script src="scripts/services/cordova/Bluetooth.js"></script>
-    <script src="scripts/directives/ui/ServiceAvailible.js"></script>
+    <!-- build:js({.tmp,app}) assets/components/components.js -->
+    <script src="scripts/components/modules/cordova.js"></script>
+    <script src="scripts/components/services/cordovaReady.js"></script>
+    <script src="scripts/components/services/cordovaBluetooth.js"></script>
+    <script src="scripts/components/modules/cordovaUi.js"></script>
+    <script src="scripts/components/directives/cordovaUiServiceAvailible.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) assets/app/app.js -->
+    <script src="scripts/app/modules/app.js"></script>
+    <script src="scripts/app/controllers/appMain.js"></script>
+    <script src="scripts/app/controllers/appThing.js"></script>
     <!-- endbuild -->
 </body>
 </html>
